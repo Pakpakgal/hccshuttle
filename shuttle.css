@@ -1,18 +1,22 @@
 h1{
     text-align : center;
+    font-family : Pretendard-Bold;
 }
 
 #articleClock{
     text-align : center;
+    font-family: Pretendard-Regular;
 }
 
 h2 {
     text-align : center;
+    font-family: Pretendard-Regular;
 }
 
 
 h3 {
     text-align : center;
+    font-family: Pretendard-Regular;
 }
 
 
