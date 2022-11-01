@@ -50,7 +50,7 @@ function nextbus_yatap(){
         var mins = min - (hours * 60);
         yt_minutes_left.innerText = hours + "시간 " + mins + "분 " + (60 - counted_seconds) + "초 남음";
     } else if{ min < 60) {
-        yt_minutes_left.innerText = min + "분 " + (60 - counted_seconds) + "초 남음";
+        yt_minutes_left.innerText = mins + "분 " + (60 - counted_seconds) + "초 남음";
     } else {
     }
 
@@ -83,7 +83,7 @@ function nextbus_church(){
         var mins = min - (hours * 60);
         ch_minutes_left.innerText = hours + "시간 " + mins + "분 " + (60 - counted_seconds) + "초 남음";
     } else if (min < 60) {
-        ch_minutes_left.innerText = min + "분 " + (60 - counted_seconds) + "초 남음";
+        ch_minutes_left.innerText = mins + "분 " + (60 - counted_seconds) + "초 남음";
     } else {
     }
 
