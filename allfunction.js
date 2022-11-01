@@ -56,7 +56,7 @@ function nextbus_yatap(){
     if (yatap_depart[i-1] == null) { // 이전 차 출력 (야탑)
         yt_passed_bus.innerText = "아직 떠나지 않았습니다";
     } else {
-        yt_passed_bus.innerText = "떠난 차 - " + yatap_depart[i-1];
+        yt_passed_bus.innerText = "🚏 떠난 차 - " + yatap_depart[i-1];
     }
 
 }    
