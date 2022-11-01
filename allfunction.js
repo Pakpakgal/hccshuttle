@@ -41,7 +41,7 @@ function nextbus_yatap(){
     if (yatap_depart[i] == null) {
         yatap_depart[i] = '운행이 종료되었습니다';
     }
-    yt_nextbus_time.innerText = "다음 차 : " + yatap_depart[i];
+    yt_nextbus_time.innerText = "다음 차 - " + yatap_depart[i];
 
     if (yatap_depart_conversion[i]- realtime_conversion() > 60){ // n시간 n분 n초 남음 출력 모듈
         min = yatap_depart_conversion[i]- realtime_conversion();
