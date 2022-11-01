@@ -49,8 +49,8 @@ function nextbus_yatap(){
         var mins = min - (hours * 60) - 1;
         yt_minutes_left.innerText = hours + "시간 " + mins + "분 " + (60 - counted_seconds) + "초 남음";
     } else if(yatap_depart_conversion[i]- realtime_conversion() < 60) {
-        yt_minutes_left.innerText = yatap_depart_conversion[i] - realtime_conversion() + "분 " + (60 - counted_seconds) + "초 남음";
-    } else{
+        yt_minutes_left.innerText = yatap_depart_conversion[i] - realtime_conversion() - 1 + "분 " + (60 - counted_seconds) + "초 남음";
+    } else {
     }
 
     if (yatap_depart[i-1] == null) { // 이전 차 출력 (야탑)
@@ -79,7 +79,7 @@ function nextbus_church(){
         var mins = min - (hours * 60) - 1;
         ch_minutes_left.innerText = hours + "시간 " + mins + "분 " + (60 - counted_seconds) + "초 남음";
     } else if (church_depart_conversion[i]- realtime_conversion() < 60) {
-        ch_minutes_left.innerText = church_depart_conversion[i] - realtime_conversion() + "분 " + (60 - counted_seconds) + "초 남음";
+        ch_minutes_left.innerText = church_depart_conversion[i] - realtime_conversion() - 1 + "분 " + (60 - counted_seconds) + "초 남음";
     } else {
     }
 
@@ -98,7 +98,7 @@ function passedbus_yatap(){
     var realtime_conversion_result = realtime_conversion(); // Realtime 컨버전 로딩
     // 조건문 시작
     for(i = 0; 600 > yatap_depart_conversion[i]; i++){}
-    ch_passed_bus.innerText = "떠난 차 :" + church_depart[i-1];
+    ch_passed_bus.innerText = "떠난 차 : " + church_depart[i-1];
 }    
 passedtbus_yatap();
 setInterval(passedbus_yatap,1000);
