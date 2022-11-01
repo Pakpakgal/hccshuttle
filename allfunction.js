@@ -43,8 +43,9 @@ function nextbus_yatap(){
     }
     yt_nextbus_time.innerText = "🚎 다음 차 - " + yatap_depart[i];
 
-    if (yatap_depart_conversion[i]- realtime_conversion()-1 > 60){ // n시간 n분 n초 남음 출력 모듈
-        min = yatap_depart_conversion[i]- realtime_conversion() - 1;
+    min = yatap_depart_conversion[i]- realtime_conversion() - 1;
+
+    if (min > 60){ // n시간 n분 n초 남음 출력 모듈
         var hours = Math.floor(min / 60);
         var mins = min - (hours * 60);
         yt_minutes_left.innerText = hours + "시간 " + mins + "분 " + (60 - counted_seconds) + "초 남음";
@@ -73,11 +74,13 @@ function nextbus_church(){
         church_depart[i] = '운행이 종료되었습니다';
     }
     ch_nextbus_time.innerText = "🚎 다음 차 - " + church_depart[i]; 
+    
+    min = church_depart_conversion[i]- realtime_conversion() - 1; 
 
-    if (church_depart_conversion[i]- realtime_conversion()-1 > 60){ // n시간 n분 n초 남음 출력 모듈
-        min = church_depart_conversion[i]- realtime_conversion() - 1; 
+    if (min > 60){ // n시간 n분 n초 남음 출력 모듈
+
         var hours = Math.floor(min / 60);
-        var mins = min - (hours * 60) - 1;
+        var mins = min - (hours * 60);
         ch_minutes_left.innerText = hours + "시간 " + mins + "분 " + (60 - counted_seconds) + "초 남음";
     } else if (min < 60) {
         ch_minutes_left.innerText = min + "분 " + (60 - counted_seconds) + "초 남음";
