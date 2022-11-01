@@ -47,7 +47,7 @@ function nextbus_yatap(){
         min = yatap_depart_conversion[i]- realtime_conversion();
         var hours = Math.floor(min / 60);
         var mins = min - (hours * 60);
-        yt_minutes_left.innerText = hours + "시간 " + mins + "분 " + (60 - counted_seconds) + "초 남음";
+        yt_minutes_left.innerText = hours + "시간 " + (mins-1) + "분 " + (60 - counted_seconds) + "초 남음";
     } else if(yatap_depart_conversion[i]- realtime_conversion() < 60) {
         yt_minutes_left.innerText = yatap_depart_conversion[i] - realtime_conversion() + "분 " + (60 - counted_seconds) + "초 남음";
     } else{
@@ -77,7 +77,7 @@ function nextbus_church(){
         min = church_depart_conversion[i]- realtime_conversion(); 
         var hours = Math.floor(min / 60);
         var mins = min - (hours * 60);
-        ch_minutes_left.innerText = hours + "시간 " + mins + "분 " + (60 - counted_seconds) + "초 남음";
+        ch_minutes_left.innerText = hours + "시간 " + (mins-1) + "분 " + (60 - counted_seconds) + "초 남음";
     } else if (church_depart_conversion[i]- realtime_conversion() < 60) {
         ch_minutes_left.innerText = church_depart_conversion[i] - realtime_conversion() + "분 " + (60 - counted_seconds) + "초 남음";
     } else {
