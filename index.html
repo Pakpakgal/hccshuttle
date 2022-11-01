@@ -24,28 +24,26 @@
         }
       }
     </style>
-    <title>HCC Bus</title>
+    <title cla>HCC Bus</title>
     <link rel="stylesheet" href="tailwindcss.css" />
     <script src = "allfunction.js"> </script>
   </head>
 
 
-  <body>
+  <body class="bg-blue-900">
 
-    <header class="text-5xl font-medium antialiased font-Pretendard">할렐루야교회 셔틀 계산기</header>
-       <br>
+    <header class="text-5xl antialiased font-Pretendard font-extrabold text-center p-9 text-white ">할렐루야교회 버스</header>
     <main>
-      <h1 id="clock"></h1>
+      <h1 id="clock" class="text-3xl antialiased font-Pretendard font-bold text-center text-white"></h1>
       <script src="allfunction.js">const clock = document.querySelector("#clock");</script>
       
-      <div class="bg-blue w-full p-8 flex justify-center font-sans">
-      <article class="rounded bg-grey-light w-64 p-2">
-        <section>
-          <h2>야탑역 출발</h2>
-          <h1 id="yt_minutes_left"></h1>
-          <h3 id="yt_nextbus_time"></h3>
-          <h3 id="yt_passed_bus"></h3>
-            <br>
+      <div class="bg-blue w-full p-5 flex justify-center">
+      <article class="rounded bg-grey-light w-auto">
+        <section class="p-3">
+          <h2 class="text-2xl antialiased font-Pretendard font-bold text-center text-white p-2">야탑역 출발</h2>
+          <h1 id="yt_minutes_left" class="text-lg antialiased font-Pretendard font-bold text-center text-white"></h1>
+          <h3 id="yt_nextbus_time" class="text-lg antialiased font-Pretendard font-bold text-left text-white"></h3>
+          <h3 id="yt_passed_bus" class="text-lg antialiased font-Pretendard font-bold text-left text-white"></h3>
           <script src="allfunction.js">
             const yt_nextbus_time = document.querySelector("yt_nextbus_time");
             const yt_minutes_left = document.querySelector("yt_minutes_left");
@@ -53,11 +51,11 @@
           </script>
         </section>
         
-        <section>
-          <h2>교회 출발</h2>
-          <h1 id="ch_minutes_left"></h1>
-          <h3 id="ch_nextbus_time"></h3>
-          <h3 id="ch_passed_bus"></h3>
+        <section class="p-3">
+          <h2 class="text-2xl antialiased font-Pretendard font-bold text-center text-white p-2">교회 출발</h2>
+          <h1 id="ch_minutes_left" class="text-lg antialiased font-Pretendard font-bold text-center text-white"></h1>
+          <h3 id="ch_nextbus_time" class="text-lg antialiased font-Pretendard font-bold text-left text-white"></h3>
+          <h3 id="ch_passed_bus" class="text-lg antialiased font-Pretendard font-bold text-left text-white"></h3>
           <script src="allfunction.js">
             const ch_passed_bus = document.querySelector("ch_passed_bus");
             const ch_nextbus_time = document.querySelector("ch_nextbus_time");
