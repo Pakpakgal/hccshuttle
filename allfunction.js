@@ -49,7 +49,7 @@ function nextbus_yatap(){
         var hours = Math.floor(min / 60);
         var mins = min - (hours * 60);
         yt_minutes_left.innerText = hours + "시간 " + mins + "분 " + (60 - counted_seconds) + "초 남음";
-    } else if { min < 60) {
+    } else if ( min < 60 ) {
         yt_minutes_left.innerText = mins + "분 " + (60 - counted_seconds) + "초 남음";
     } else {
     }
