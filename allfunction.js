@@ -21,8 +21,8 @@ setInterval(second_Counter, 1000);
 
 function realtime_conversion() {
     let today = new Date();   
-    let hours = today.getHours(); // 시
-    let minutes = today.getMinutes();  // 분
+    let hours = 15;//today.getHours(); // 시
+    let minutes = 12;//today.getMinutes();  // 분
 
     var realtime_conversion_result = (hours * 60) + minutes;
     return realtime_conversion_result;
@@ -44,10 +44,11 @@ function nextbus_yatap(){
     yt_nextbus_time.innerText = "🚎 다음 차 - " + yatap_depart[i];
 
     var min = yatap_depart_conversion[i]- realtime_conversion() - 1;
+    var hours = Math.floor(min / 60);
+    var mins = min - (hours * 60);
 
     if (min > 60){ // n시간 n분 n초 남음 출력 모듈
-        var hours = Math.floor(min / 60);
-        var mins = min - (hours * 60);
+
         yt_minutes_left.innerText = hours + "시간 " + mins + "분 " + (60 - counted_seconds) + "초 남음";
     } else if ( min < 60 ) {
         yt_minutes_left.innerText = mins + "분 " + (60 - counted_seconds) + "초 남음";
@@ -76,11 +77,10 @@ function nextbus_church(){
     ch_nextbus_time.innerText = "🚎 다음 차 - " + church_depart[i]; 
     
     var min = church_depart_conversion[i]- realtime_conversion() - 1; 
+    var hours = Math.floor(min / 60);
+    var mins = min - (hours * 60);
 
     if (min > 60){ // n시간 n분 n초 남음 출력 모듈
-
-        var hours = Math.floor(min / 60);
-        var mins = min - (hours * 60);
         ch_minutes_left.innerText = hours + "시간 " + mins + "분 " + (60 - counted_seconds) + "초 남음";
     } else if (min < 60) {
         ch_minutes_left.innerText = mins + "분 " + (60 - counted_seconds) + "초 남음";
