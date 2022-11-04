@@ -21,8 +21,8 @@ setInterval(second_Counter, 1000);
 
 function realtime_conversion() {
     let today = new Date();   
-    let hours = 15;//today.getHours(); // 시
-    let minutes = 12;//today.getMinutes();  // 분
+    let hours = today.getHours(); // 시
+    let minutes = today.getMinutes();  // 분
 
     var realtime_conversion_result = (hours * 60) + minutes;
     return realtime_conversion_result;
