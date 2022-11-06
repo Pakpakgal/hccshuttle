@@ -21,8 +21,8 @@ setInterval(second_Counter, 1000);
 
 function realtime_conversion() {
     let today = new Date();   
-    let hours = today.getHours(); // 시
-    let minutes = today.getMinutes();  // 분
+    let hours = 17;//today.getHours(); // 시
+    let minutes = 55;//today.getMinutes();  // 분
 
     var realtime_conversion_result = (hours * 60) + minutes;
     return realtime_conversion_result;
@@ -42,26 +42,29 @@ function nextbus_yatap(){
         yatap_depart[i] = '운행이 종료되었습니다';
     }
     yt_nextbus_time.innerText = "🚎  다음 버스 - " + yatap_depart[i];
-    yt_nextbus2_time.innerText = "🚌  다다음 차 - " + yatap_depart[i+1];
-
-    var min = yatap_depart_conversion[i]- realtime_conversion() - 1;
-    var hours = Math.floor(min / 60);
-    var mins = min - (hours * 60);
-
-    if (min > 60){ // n시간 n분 n초 남음 출력 모듈
-
-        yt_minutes_left.innerText = hours + "시간 " + mins + "분 " + (60 - counted_seconds) + "초 남음";
-    } else if ( min < 60 ) {
-        yt_minutes_left.innerText = mins + "분 " + (60 - counted_seconds) + "초 남음";
+    if (yatap_depart[i+1] == null) {
+        yatap_depart[i+1] = '없습니다';
     } else {
-    }
 
-    if (yatap_depart[i-1] == null) { // 이전 차 출력 (야탑)
-        yt_passed_bus.innerText = "아직 떠나지 않았습니다";
-    } else {
-        yt_passed_bus.innerText = yatap_depart[i-1] + "분 차는 떠났네요 😢";
-    }
+        yt_nextbus2_time.innerText = "🚌  다다음 차 - " + yatap_depart[i+1];
 
+        var min = yatap_depart_conversion[i]- realtime_conversion() - 1;
+        var hours = Math.floor(min / 60);
+        var mins = min - (hours * 60);
+
+        if (min > 60){ // n시간 n분 n초 남음 출력 모듈
+
+            yt_minutes_left.innerText = hours + "시간 " + mins + "분 " + (60 - counted_seconds) + "초 남음";
+        } else if ( min < 60 ) {
+            yt_minutes_left.innerText = mins + "분 " + (60 - counted_seconds) + "초 남음";
+        }
+
+        if (yatap_depart[i-1] == null) { // 이전 차 출력 (야탑)
+            yt_passed_bus.innerText = "아직 떠나지 않았습니다";
+        } else {
+            yt_passed_bus.innerText = yatap_depart[i-1] + "분 차는 떠났네요 😢";
+        }
+    }
 }    
 nextbus_yatap();
 setInterval(nextbus_yatap,1000);
@@ -75,8 +78,13 @@ function nextbus_church(){
     if (church_depart[i] == null) {
         church_depart[i] = '운행이 종료되었습니다';
     }
-    ch_nextbus_time.innerText = "🚎  다음 버스 - " + church_depart[i]; 
-    ch_nextbus2_time.innerText = "🚌  다다음 차 - " + church_depart[i+1]; 
+    ch_nextbus_time.innerText = "🚎  다음 버스 - " + church_depart[i];
+    
+    if (church_depart[i+1] == null) {
+        church_depart[i+1] = '없습니다';
+    }
+    ch_nextbus2_time.innerText = "🚌  다다음 차 - " + church_depart[i+1];
+
 
     var min = church_depart_conversion[i]- realtime_conversion() - 1; 
     var hours = Math.floor(min / 60);
