@@ -43,44 +43,47 @@
 
   <body class="bg-blue-900">
 
-    <header class="text-3xl antialiased font-Pretendard font-extrabold text-center p-9 text-white">할렐루야교회 주일셔틀</header>
+    <header class="text-3xl antialiased font-Pretendard font- text-center p-5 text-white">할렐루야교회 주일셔틀</header>
     <main>
       <h1 id="clock" class="text-3xl antialiased font-Pretendard font-bold text-center text-white"></h1>
       <script src="allfunction.js">const clock = document.querySelector("#clock");</script>
       
-      <div class="w-full p-4 flex justify-center">
+      <div class="w-full p-3 flex justify-center">
       <article class="rounded bg-grey-light w-auto">
         <section class="p-3">
-          <h2 class="text-2xl antialiased font-Pretendard font-bold text-center text-white p-2">야탑역 출발</h2>
+          <h2 class="text-2xl antialiased font-Pretendard font-bold text-center text-white p-2">🚉 야탑역 출발</h2>
           <h1 id="yt_minutes_left" class="text-lg antialiased font-Pretendard font-bold text-center text-white"></h1>
           <h3 id="yt_nextbus_time" class="text-lg antialiased font-Pretendard font-bold text-left text-white"></h3>
+          <h3 id="yt_nextbus2_time" class="text-lg antialiased font-Pretendard font-bold text-left text-white"></h3>
           <h3 id="yt_passed_bus" class="text-lg antialiased font-Pretendard font-bold text-left text-white"></h3>
           <script src="allfunction.js">
             const yt_nextbus_time = document.querySelector("yt_nextbus_time");
+            const yt_nextbus2_time = document.querySelector("yt_nextbus2_time");
             const yt_minutes_left = document.querySelector("yt_minutes_left");
             const yt_passed_bus = document.querySelector("yt_passed_bus");
           </script>
         </section>
         
         <section class="p-3">
-          <h2 class="text-2xl antialiased font-Pretendard font-bold text-center text-white p-2">교회 출발</h2>
+          <h2 class="text-2xl antialiased font-Pretendard font-bold text-center text-white p-2">💒 교회 출발</h2>
           <h1 id="ch_minutes_left" class="text-lg antialiased font-Pretendard font-bold text-center text-white"></h1>
           <h3 id="ch_nextbus_time" class="text-lg antialiased font-Pretendard font-bold text-left text-white"></h3>
+          <h3 id="ch_nextbus2_time" class="text-lg antialiased font-Pretendard font-bold text-left text-white"></h3>
           <h3 id="ch_passed_bus" class="text-lg antialiased font-Pretendard font-bold text-left text-white"></h3>
           <script src="allfunction.js">
-            const ch_passed_bus = document.querySelector("ch_passed_bus");
             const ch_nextbus_time = document.querySelector("ch_nextbus_time");
+            const ch_nextbus2_time = document.querySelector("ch_nextbus2_time");
             const ch_minutes_left = document.querySelector("ch_minutes_left");
+            const ch_passed_bus = document.querySelector("ch_passed_bus");
           </script>
         </section>
       </article>
       </div>
       <section class="bg-blue w-full p-6 flex justify-center text-base antialiased font-Pretendard font-bold text-left text-white" >
       📣 공유하기를 눌러, 홈 화면에 추가하시면 <br/>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;더 편리하게 접속하실 수 있습니다<br/><br/>
-
-      📣 할렐루야교회 홈페이지의 셔틀 시간표를 기준이며 <br/>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;실제 출발시간과 조금 차이가 있을 수 있습니다
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;더 편리하게 접속하실 수 있습니다<br/>
+      📣 할렐루야교회 홈페이지의 시간표를 기준하였고 <br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;실제 출발시간과 차이가 있을 수 있습니다
       </section>
 
     </main>
