@@ -41,8 +41,8 @@ function nextbus_yatap(){
     if (yatap_depart[i] == null) {
         yatap_depart[i] = '운행이 종료되었습니다';
     }
-    yt_nextbus_time.innerText = "🚎 다음 버스 - " + yatap_depart[i];
-    yt_nextbus2_time.innerText = "🚎 다다음 차 - " + yatap_depart[i+1];
+    yt_nextbus_time.innerText = "🚎  다음 버스 - " + yatap_depart[i];
+    yt_nextbus2_time.innerText = "🚌  다다음 차 - " + yatap_depart[i+1];
 
     var min = yatap_depart_conversion[i]- realtime_conversion() - 1;
     var hours = Math.floor(min / 60);
@@ -75,8 +75,8 @@ function nextbus_church(){
     if (church_depart[i] == null) {
         church_depart[i] = '운행이 종료되었습니다';
     }
-    ch_nextbus_time.innerText = "🚎 다음 버스 - " + church_depart[i]; 
-    ch_nextbus2_time.innerText = "🚎 다다음 차 - " + church_depart[i+1]; 
+    ch_nextbus_time.innerText = "🚎  다음 버스 - " + church_depart[i]; 
+    ch_nextbus2_time.innerText = "🚌  다다음 차 - " + church_depart[i+1]; 
 
     var min = church_depart_conversion[i]- realtime_conversion() - 1; 
     var hours = Math.floor(min / 60);
