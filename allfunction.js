@@ -41,7 +41,8 @@ function nextbus_yatap(){
     if (yatap_depart[i] == null) {
         yatap_depart[i] = '운행이 종료되었습니다';
     }
-    yt_nextbus_time.innerText = "🚎 다음 차 - " + yatap_depart[i];
+    yt_nextbus_time.innerText = "🚎 다음 버스 - " + yatap_depart[i];
+    yt_nextbus2_time.innerText = "🚎 다다음 차 - " + yatap_depart[i+1];
 
     var min = yatap_depart_conversion[i]- realtime_conversion() - 1;
     var hours = Math.floor(min / 60);
@@ -58,7 +59,7 @@ function nextbus_yatap(){
     if (yatap_depart[i-1] == null) { // 이전 차 출력 (야탑)
         yt_passed_bus.innerText = "아직 떠나지 않았습니다";
     } else {
-        yt_passed_bus.innerText = "🚏 떠난 차 - " + yatap_depart[i-1];
+        yt_passed_bus.innerText = yatap_depart[i-1] + "분 차는 떠났네요 😢";
     }
 
 }    
@@ -74,8 +75,9 @@ function nextbus_church(){
     if (church_depart[i] == null) {
         church_depart[i] = '운행이 종료되었습니다';
     }
-    ch_nextbus_time.innerText = "🚎 다음 차 - " + church_depart[i]; 
-    
+    ch_nextbus_time.innerText = "🚎 다음 버스 - " + church_depart[i]; 
+    ch_nextbus2_time.innerText = "🚎 다다음 차 - " + church_depart[i+1]; 
+
     var min = church_depart_conversion[i]- realtime_conversion() - 1; 
     var hours = Math.floor(min / 60);
     var mins = min - (hours * 60);
@@ -91,7 +93,7 @@ function nextbus_church(){
     if (church_depart[i-1] == null) { // 이전 차 출력 (교회)
         ch_passed_bus.innerText = "아직 떠나지 않았습니다";
     } else {
-        ch_passed_bus.innerText = "🚏 떠난 차 - " + church_depart[i-1];
+        ch_passed_bus.innerText = church_depart[i-1] + "분 차는 떠났네요 😢";
     }
 }
 nextbus_church();
@@ -102,7 +104,7 @@ function passedbus_yatap(){
     var realtime_conversion_result = realtime_conversion(); // Realtime 컨버전 로딩
     // 조건문 시작
     for(i = 0; 600 > yatap_depart_conversion[i]; i++){}
-    ch_passed_bus.innerText = "🚏 떠난 차 - " + church_depart[i-1];
+    ch_passed_bus.innerText = church_depart[i-1] + "분 차는 떠났네요 😢";
 }    
 passedtbus_yatap();
 setInterval(passedbus_yatap,1000);
@@ -115,7 +117,7 @@ function passedbus_church(){
     if (church_depart[i-1] == null) {
         church_depart[i-1] = '운행이 종료되었습니다';
     }
-    ch_passed_bus.innerText = "🚏 떠난 차 - " + church_depart[i-1];
+    ch_passed_bus.innerText = church_depart[i-1] + "분 차는 떠났네요 😢";
 }    
 passedtbus_church();
 setInterval(passedbus_church,1000);
